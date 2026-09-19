@@ -13,11 +13,7 @@ export default function Projects() {
       </header>
       <section className="project-list">
         {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            project={project}
-            featured={project.featured}
-          />
+          <ProjectCard key={project.id} project={project} equal />
         ))}
       </section>
     </main>

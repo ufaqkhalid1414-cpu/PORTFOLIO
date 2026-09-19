@@ -6,9 +6,10 @@ export const site = {
   role: "Software / Web Developer",
   eyebrow: "Hi, I’m Ufaq  ·  Gujranwala, Pakistan",
   headlineLead: "Creative",
-  headlineRest: "Developer",
+  headlineRest: "Designer & Developer",
   tagline:
     "I design and implement practical web applications with a focus on clarity, data integrity, and usable interfaces.",
+  workTagline: "I design and implement practical web applications.",
   email: "ufaqkhalid1414@gmail.com",
   phone: "0322-6037970",
   phoneHref: "tel:+923226037970",
@@ -44,6 +45,27 @@ export const about = {
 };
 
 export const services = [
+  {
+    id: "webdev",
+    icon: "web",
+    title: "Website Development",
+    body: "Fast, usable sites and web apps — HTML, CSS, JavaScript, PHP — from layout through screens people can actually walk through.",
+    tags: ["HTML", "CSS", "JavaScript", "PHP"],
+  },
+  {
+    id: "uiux",
+    icon: "ui",
+    title: "UI/UX Design",
+    body: "Clear dashboards, login, and management screens. Roles and tasks stay obvious so the interface matches how people work.",
+    tags: ["Dashboards", "Roles", "Usability"],
+  },
+  {
+    id: "brand",
+    icon: "brand",
+    title: "Brand Design",
+    body: "A consistent look across this portfolio and product screens — type, color, and layout that stay readable and on-brand.",
+    tags: ["Visual system", "Type", "Color"],
+  },
   {
     id: "01",
     icon: "db",
@@ -197,11 +219,13 @@ export const testimonials = [
     quote:
       "The Smart Campus interface is clear and easy to use. Behind it, the DBMS is solid — students, attendance, and grades stay consistent, and the roles make sense.",
     name: "Laiba",
+    avatar: "girl",
   },
   {
     quote:
       "Your effort was good, especially considering the challenges in the project. You should clearly define the modules and where AI can actually add value.",
     name: "Professor",
+    avatar: "man",
   },
 ];
 
@@ -210,7 +234,7 @@ export const faqs = [
     id: "01",
     question: "What do you actually offer?",
     answer:
-      "Database systems, written specifications, web screens on those systems, and applied DSA in a playable game. Those four match the three projects on Work. I do not list services I have not done.",
+      "Website development, UI/UX, brand design, database systems, written specifications, web screens, and applied DSA in a playable game. I do not list work I have not done.",
   },
   {
     id: "02",

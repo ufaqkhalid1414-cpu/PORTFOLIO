@@ -59,6 +59,44 @@ const icons = {
       <path d="M13.2 7.2 15.4 9l-2.2 1.8" />
     </>
   ),
+  ui: (
+    <>
+      <rect x="4" y="5" width="16" height="14" rx="2" />
+      <path d="M8 15.5 14.2 8.2l2.3 2.2" />
+      <path d="M14.2 8.2l1.6-1.6 2.1 2.1-1.6 1.6" />
+    </>
+  ),
+  brand: (
+    <>
+      <path d="M12 3.5 20 12l-8 8.5L4 12z" />
+      <path d="M12 8v8M8.5 12h7" />
+    </>
+  ),
+  girl: (
+    <>
+      <path
+        d="M8.4 10.8c0-3.4 1.6-6.4 3.6-6.4s3.6 3 3.6 6.4c0 1.4-.4 2.4-1.2 2.8"
+        fill="currentColor"
+        stroke="none"
+      />
+      <circle cx="12" cy="8.6" r="2.7" fill="currentColor" stroke="none" />
+      <path
+        d="M5.6 20c1.1-4.2 3.4-6.2 6.4-6.2s5.3 2 6.4 6.2"
+        fill="currentColor"
+        stroke="none"
+      />
+    </>
+  ),
+  man: (
+    <>
+      <circle cx="12" cy="8" r="3.3" fill="currentColor" stroke="none" />
+      <path
+        d="M5.6 20c.9-4.3 3.2-6.4 6.4-6.4s5.5 2.1 6.4 6.4"
+        fill="currentColor"
+        stroke="none"
+      />
+    </>
+  ),
 };
 
 export default function Icon({ name, size = 20 }) {

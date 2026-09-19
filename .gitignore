@@ -5,3 +5,6 @@ dist
 references/
 selected-green/
 ALL-PAGES-FULL.png
+preview-*.png
+sample-*.png
+public/next-preview.html

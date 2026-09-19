@@ -29,17 +29,18 @@ export default function ProjectCard({
   project,
   featured = false,
   compact = false,
+  equal = false,
 }) {
   return (
     <article
       className={`project-card${featured ? " is-featured" : ""}${
         compact ? " is-compact" : ""
-      }`}
+      }${equal ? " is-equal" : ""}`}
     >
       <Shots
         images={project.images}
         title={project.title}
-        compact={compact}
+        compact={compact || equal}
         shot={project.shot}
       />
       <div className="project-meta">
@@ -49,17 +50,24 @@ export default function ProjectCard({
             <Link to={project.href}>{project.title}</Link>
           </h3>
           <p>{project.outcome}</p>
-          <ul className="project-stack">
-            {project.stack.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+          {!equal && (
+            <ul className="project-stack">
+              {project.stack.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          )}
         </div>
-        <span className="project-year">{project.year}</span>
+        {!equal && <span className="project-year">{project.year}</span>}
       </div>
-      <Link to={project.href} className="project-link">
-        View <span aria-hidden="true">→</span>
-      </Link>
+      <div className="project-actions">
+        <Link to={project.href} className="project-link">
+          View <span aria-hidden="true">→</span>
+        </Link>
+        <Link to="/contact" className="btn btn-sm">
+          Contact Me <span aria-hidden="true">→</span>
+        </Link>
+      </div>
     </article>
   );
 }
