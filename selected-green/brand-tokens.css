@@ -1,0 +1,48 @@
+/* MORF green sample — copy these tokens into the portfolio build.
+   Adapt names/content. Do not copy the original identity 1:1. */
+
+:root {
+  /* Surfaces */
+  --bg: #070b09;
+  --bg-elevated: #0d1410;
+  --surface: #121a16;
+  --surface-2: #18241c;
+  --surface-3: #1b3822;
+
+  /* Brand greens */
+  --mint: #a7f5aa;
+  --mint-soft: #b0f7b3;
+  --mint-deep: #8dff86;
+  --lime: #7cff6b;
+  --forest: #1f3a28;
+  --moss: #9aa89e;
+
+  /* Text */
+  --text: #f5f7f5;
+  --text-muted: #9aa89e;
+  --text-on-mint: #07110a;
+
+  /* Lines / glow */
+  --border: rgba(167, 245, 170, 0.16);
+  --glow: 0 0 80px rgba(167, 245, 170, 0.18);
+  --grid: rgba(167, 245, 170, 0.06);
+
+  /* Type */
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Outfit", "Segoe UI", sans-serif;
+
+  /* Space / radius */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 80px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+
+  --nav-h: 72px;
+  --content: 1120px;
+}

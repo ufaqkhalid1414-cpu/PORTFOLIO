@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brand kit — Ufaq Khalid</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #070b09;
+      --bg-elevated: #0d1410;
+      --surface: #121a16;
+      --surface-2: #18241c;
+      --surface-3: #1b3822;
+      --mint: #a7f5aa;
+      --mint-soft: #b0f7b3;
+      --mint-deep: #8dff86;
+      --lime: #7cff6b;
+      --forest: #1f3a28;
+      --moss: #9aa89e;
+      --text: #f5f7f5;
+      --text-muted: #9aa89e;
+      --text-on-mint: #07110a;
+      --border: rgba(167, 245, 170, 0.16);
+      --display: "Fraunces", Georgia, serif;
+      --sans: "Outfit", "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); overflow-x: hidden; }
+    body { line-height: 1.55; }
+    a { color: var(--mint); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 24px 120px; }
+    header.hero {
+      padding: 32px 0 40px;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse 70% 55% at 90% 0%, rgba(167, 245, 170, 0.16), transparent 58%),
+        radial-gradient(ellipse 40% 40% at 0% 100%, rgba(124, 255, 107, 0.07), transparent 52%);
+    }
+    .kicker { color: var(--mint); letter-spacing: 0.14em; text-transform: uppercase; font-size: 12px; font-weight: 600; margin: 0 0 12px; }
+    h1 {
+      font-family: var(--display);
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 0.98;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+    }
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(105deg, #a7f5aa 0%, #f5f7f5 72%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    h2 { font-size: 22px; margin: 64px 0 16px; }
+    h3 { font-size: 13px; margin: 0 0 8px; color: var(--mint); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+    p, li { color: var(--text-muted); }
+    .lead { color: var(--text); max-width: 68ch; }
+    nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    nav.toc a {
+      color: var(--text-on-mint); background: var(--mint); text-decoration: none;
+      padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 600;
+    }
+    .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+    .swatch { border: 1px solid var(--border); border-radius: 16px; overflow: hidden; background: var(--surface); }
+    .swatch .chip { height: 80px; }
+    .swatch .meta { padding: 10px 12px; font-size: 12px; }
+    .swatch code { color: var(--text); }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 800px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+    .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .table-wrap table { min-width: 780px; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    th { color: var(--mint); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+    td strong { color: var(--text); font-weight: 600; }
+    .type-row { padding: 18px 0; border-bottom: 1px solid var(--border); }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, #a7f5aa 0%, #7cff6b 100%);
+      color: var(--text-on-mint); border: 0;
+      padding: 12px 20px; border-radius: 999px; font-weight: 600; font-family: var(--sans);
+      font-size: 14px; letter-spacing: 0.02em;
+      box-shadow: 0 0 40px rgba(167, 245, 170, 0.22);
+    }
+    .btn.ghost {
+      background: transparent; color: var(--text); border: 1px solid var(--border); box-shadow: none;
+    }
+    .logo {
+      width: 48px; height: 48px; border-radius: 999px; background: var(--surface-2);
+      display: grid; place-items: center; color: var(--mint);
+      border: 1px solid var(--border);
+    }
+    .nav-demo {
+      display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+      background: rgba(7, 11, 9, 0.78); border: 1px solid var(--border); border-radius: 24px;
+      padding: 10px 14px;
+    }
+    .nav-demo .links { display: flex; gap: 18px; font-size: 13px; color: var(--text-muted); }
+    .nav-demo .links b { color: var(--mint); }
+    .pill { display: inline-block; background: var(--surface-3); color: var(--mint); border-radius: 999px; padding: 6px 12px; font-size: 12px; margin: 0 6px 6px 0; }
+    pre {
+      background: #050807; border: 1px solid var(--border); border-radius: 12px;
+      padding: 16px; overflow: auto; color: var(--mint-soft); font-size: 12px; line-height: 1.45;
+    }
+    .do li { color: #b0f7b3; }
+    .dont li { color: #e8a0a0; }
+    code { font-family: ui-monospace, Consolas, monospace; }
+    .wordmark {
+      font-family: var(--display);
+      font-size: clamp(56px, 16vw, 140px);
+      overflow: hidden;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 0.85;
+      margin: 8px 0 0;
+      -webkit-mask-image: linear-gradient(#070b09 38%, transparent 92%);
+      mask-image: linear-gradient(#070b09 38%, transparent 92%);
+    }
+    .hero-demo em { font-family: var(--display); font-style: italic; font-size: 56px; line-height: 0.95; }
+    .grad-hero {
+      min-height: 160px; border-radius: 16px; border: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse 70% 55% at 78% 8%, rgba(167, 245, 170, 0.16), transparent 58%),
+        radial-gradient(ellipse 45% 40% at 8% 92%, rgba(124, 255, 107, 0.07), transparent 52%),
+        #070b09;
+    }
+    .grad-text {
+      font-family: var(--display); font-style: italic; font-size: 48px;
+      background: linear-gradient(105deg, #a7f5aa 0%, #f5f7f5 72%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .grad-btn {
+      display: inline-flex; padding: 12px 20px; border-radius: 999px;
+      background: linear-gradient(135deg, #a7f5aa 0%, #7cff6b 100%);
+      color: #07110a; font-weight: 600; box-shadow: 0 0 40px rgba(167, 245, 170, 0.22);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="kicker">Brand kit · live site</div>
+      <h1>Ufaq <em>Khalid</em></h1>
+      <p class="lead">Software / Web Developer. This kit documents the identity of the portfolio as it is built — not a sample, not MORF. Every token below is in use in <code>src/styles/tokens.css</code> and <code>src/styles/global.css</code>.</p>
+      <nav class="toc">
+        <a href="#identity">Identity</a>
+        <a href="#logo">Logo</a>
+        <a href="#color">Color</a>
+        <a href="#type">Type</a>
+        <a href="#gradient">Gradient</a>
+        <a href="#space">Space</a>
+        <a href="#components">Components</a>
+        <a href="#voice">Voice</a>
+        <a href="#ia">Pages</a>
+        <a href="#tokens">Tokens</a>
+        <a href="#rules">Rules</a>
+      </nav>
+    </header>
+
+    <h2 id="identity">Identity</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Name</h3>
+        <p><strong style="color:#f5f7f5">Ufaq Khalid</strong></p>
+        <p>First name in speech: Ufaq. Wordmark: <strong style="color:#f5f7f5">UFAQ</strong></p>
+        <p>Role: Software / Web Developer</p>
+        <p>Location: Gujranwala, Pakistan</p>
+      </div>
+      <div class="card">
+        <h3>Contact</h3>
+        <p>Email: <a href="mailto:ufaqkhalid1414@gmail.com">ufaqkhalid1414@gmail.com</a></p>
+        <p>Phone: <a href="tel:+923226037970">0322-6037970</a></p>
+        <p>GitHub: <a href="https://github.com/ufaqkhalid1414-cpu">ufaqkhalid1414-cpu</a></p>
+        <p>LinkedIn: not in the kit yet (TBD)</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top:16px">
+      <h3>Positioning line</h3>
+      <p style="color:#f5f7f5;font-size:18px;margin:0">I turn messy records into <em style="font-family:var(--display);color:var(--mint)">systems</em> people can trust.</p>
+      <p style="margin:12px 0 0">Hero pair: italic <em>Creative</em> + roman Developer ↗</p>
+    </div>
+
+    <h2 id="logo">Logo and mark</h2>
+    <div class="grid2">
+      <div class="card">
+        <div class="logo" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 32 32" fill="none"><path fill="currentColor" d="M16 2.4 18.05 13.7 29.6 16 18.05 18.3 16 29.6 13.95 18.3 2.4 16 13.95 13.7Z"/></svg>
+        </div>
+        <p>8-point spark. Mint on a 40×40 circle, surface-2 fill, 1px mint border. Nav left. Recreate as SVG — never screenshot.</p>
+        <p>Path: <code>M16 2.4 18.05 13.7 29.6 16 18.05 18.3 16 29.6 13.95 18.3 2.4 16 13.95 13.7Z</code></p>
+        <p>Favicon: same spark on <code>#070b09</code>, 10px rounded square.</p>
+      </div>
+      <div class="card">
+        <h3>Wordmark</h3>
+        <p class="wordmark">UFAQ</p>
+        <p>Fraunces 500, <code>clamp(72px, 18vw, 240px)</code>, tracking <code>-0.04em</code>, line-height 0.85. Vertical mask: solid to transparent 38% → 92%. Footer only. Never as a logo in the nav — nav uses spark + “Ufaq Khalid” 15px Outfit 600, tracking 0.04em.</p>
+      </div>
+    </div>
+    <div class="nav-demo" style="margin-top:16px">
+      <span style="display:flex;align-items:center;gap:10px">
+        <span class="logo" style="width:40px;height:40px">
+          <svg width="18" height="18" viewBox="0 0 32 32"><path fill="#a7f5aa" d="M16 2.4 18.05 13.7 29.6 16 18.05 18.3 16 29.6 13.95 18.3 2.4 16 13.95 13.7Z"/></svg>
+        </span>
+        <span style="color:#f5f7f5;font-weight:600;font-size:15px;letter-spacing:0.04em">Ufaq Khalid</span>
+      </span>
+      <div class="links"><b>● Home</b> <span>About</span> <span>Work</span> <span>Contact</span></div>
+      <span class="btn" style="padding:10px 16px;font-size:13px">Contact Me</span>
+    </div>
+
+    <h2 id="color">Color</h2>
+    <p>One dark forest field. One mint family. No second accent, no purple, no rainbow. Mint is type, pills, icons, borders, and the five gradient uses — not large filled backgrounds.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#070b09"></div><div class="meta">Background<br><code>#070B09</code> · <code>--bg</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#0d1410"></div><div class="meta">Elevated / sticky nav<br><code>#0D1410</code> · <code>--bg-elevated</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#121a16"></div><div class="meta">Surface / cards<br><code>#121A16</code> · <code>--surface</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#18241c"></div><div class="meta">Surface 2 / mark disc<br><code>#18241C</code> · <code>--surface-2</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1b3822"></div><div class="meta">Surface 3 / pills<br><code>#1B3822</code> · <code>--surface-3</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#1f3a28"></div><div class="meta">Forest / icon circles<br><code>#1F3A28</code> · <code>--forest</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#a7f5aa"></div><div class="meta">Mint primary<br><code>#A7F5AA</code> · <code>--mint</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#b0f7b3"></div><div class="meta">Mint soft<br><code>#B0F7B3</code> · <code>--mint-soft</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#8dff86"></div><div class="meta">Mint deep<br><code>#8DFF86</code> · <code>--mint-deep</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#7cff6b"></div><div class="meta">Lime pop (CTA end)<br><code>#7CFF6B</code> · <code>--lime</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#f5f7f5"></div><div class="meta">Text<br><code>#F5F7F5</code> · <code>--text</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#9aa89e"></div><div class="meta">Muted / moss<br><code>#9AA89E</code> · <code>--text-muted</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#07110a"></div><div class="meta">On mint (buttons)<br><code>#07110A</code> · <code>--text-on-mint</code></div></div>
+      <div class="swatch"><div class="chip" style="background:#e8a0a0"></div><div class="meta">Error only<br><code>#E8A0A0</code></div></div>
+    </div>
+    <table style="margin-top:24px">
+      <thead><tr><th>Token</th><th>Value</th><th>Use</th></tr></thead>
+      <tbody>
+        <tr><td><code>--border</code></td><td><code>rgba(167, 245, 170, 0.16)</code></td><td>Cards, inputs, nav rule, frames</td></tr>
+        <tr><td><code>--glow</code></td><td><code>0 0 80px rgba(167, 245, 170, 0.18)</code></td><td>Featured project card only</td></tr>
+        <tr><td><code>--grid</code></td><td><code>rgba(167, 245, 170, 0.06)</code></td><td>Hero graph-paper overlay, 48×48</td></tr>
+        <tr><td>Selection</td><td>Mint fill, on-mint text</td><td><code>::selection</code></td></tr>
+        <tr><td>Nav glass</td><td><code>rgba(7, 11, 9, 0.78)</code> + blur 16px</td><td>Sticky header</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="type">Typography</h2>
+    <p>Two families only. Fraunces is the voice. Outfit is the machine. Optical size on Fraunces is required.</p>
+    <div class="type-row">
+      <div class="kicker">Display italic · Fraunces 500 · opsz 144</div>
+      <div class="grad-text">Creative</div>
+    </div>
+    <div class="type-row">
+      <div class="kicker">Display roman · Fraunces 500 · clamp(56px, 8vw, 104px) · tracking -0.03em · lh 0.95</div>
+      <div style="font-family:var(--display);font-size:48px;font-weight:500;letter-spacing:-0.03em;line-height:0.95;color:#f5f7f5">Developer ↗</div>
+    </div>
+    <div class="type-row">
+      <div class="kicker">Section / page title · Fraunces · clamp(36px, 5vw, 64px) · tracking -0.02em · lh 1.05 · italic word mint solid</div>
+      <div style="font-family:var(--display);font-size:36px;letter-spacing:-0.02em">I turn messy records into <em style="font-style:italic;color:var(--mint)">systems</em></div>
+    </div>
+    <div class="type-row">
+      <div class="kicker">Eyebrow / kicker · Outfit 600 · 12px · tracking 0.14em · uppercase · mint</div>
+      <div class="kicker" style="margin:0">Hi, I’m Ufaq  ·  Gujranwala, Pakistan</div>
+    </div>
+    <div class="type-row">
+      <div class="kicker">Body / lede · Outfit 400 · 18px · lh 1.55 · muted · max 46ch</div>
+      <div style="color:var(--text-muted);font-size:18px;max-width:46ch">I design and implement practical web applications with a focus on clarity, data integrity, and usable interfaces.</div>
+    </div>
+    <div class="type-row">
+      <div class="kicker">Body default · Outfit 400 · 16px · lh 1.55 · text #F5F7F5 on page, muted on paragraphs</div>
+      <div>Default document type. Never set paragraphs in Fraunces.</div>
+    </div>
+    <div class="table-wrap">
+    <table>
+      <thead><tr><th>Role</th><th>Face</th><th>Size</th><th>Weight</th><th>Tracking</th><th>Line-height</th><th>Color</th></tr></thead>
+      <tbody>
+        <tr><td>Kicker</td><td>Outfit</td><td>12px</td><td>600</td><td>0.14em</td><td>1</td><td>#A7F5AA</td></tr>
+        <tr><td>Hero display</td><td>Fraunces</td><td>clamp(56px, 8vw, 104px)</td><td>500</td><td>-0.03em</td><td>0.95</td><td>#F5F7F5 / gradient italic</td></tr>
+        <tr><td>Hero initial “U”</td><td>Fraunces</td><td>clamp(120px, 18vw, 220px)</td><td>500</td><td>-0.06em</td><td>0.8</td><td>#F5F7F5</td></tr>
+        <tr><td>Page / section title</td><td>Fraunces</td><td>clamp(36px, 5vw, 64px) · page-title up to 80px</td><td>500</td><td>-0.02em / -0.03em</td><td>1.05 / 0.98</td><td>#F5F7F5 · em #A7F5AA</td></tr>
+        <tr><td>Mobile menu</td><td>Fraunces</td><td>36px</td><td>500</td><td>0</td><td>1.2</td><td>#F5F7F5 · active mint</td></tr>
+        <tr><td>Footer wordmark</td><td>Fraunces</td><td>clamp(72px, 18vw, 240px)</td><td>500</td><td>-0.04em</td><td>0.85</td><td>#F5F7F5 + fade mask</td></tr>
+        <tr><td>Footer line</td><td>Outfit</td><td>22px</td><td>400</td><td>0</td><td>1.4</td><td>#F5F7F5</td></tr>
+        <tr><td>Lede</td><td>Outfit</td><td>18px</td><td>400</td><td>0</td><td>1.55</td><td>#9AA89E</td></tr>
+        <tr><td>Nav links</td><td>Outfit</td><td>13px</td><td>500</td><td>0.02em</td><td>1</td><td>#9AA89E · active mint</td></tr>
+        <tr><td>Brand name</td><td>Outfit</td><td>15px</td><td>600</td><td>0.04em</td><td>1</td><td>#F5F7F5</td></tr>
+        <tr><td>Button</td><td>Outfit</td><td>14px (nav 13px)</td><td>600</td><td>0.02em</td><td>1</td><td>#07110A on gradient</td></tr>
+        <tr><td>Text link</td><td>Outfit</td><td>14px</td><td>600</td><td>0.02em</td><td>1</td><td>#A7F5AA · hover lime</td></tr>
+        <tr><td>Project title</td><td>Outfit</td><td>22px</td><td>600</td><td>0</td><td>1.2</td><td>#F5F7F5</td></tr>
+        <tr><td>Project index 01</td><td>Fraunces</td><td>14px</td><td>500</td><td>0.08em</td><td>1</td><td>#A7F5AA</td></tr>
+        <tr><td>Project year / footer meta</td><td>Outfit</td><td>13px</td><td>400</td><td>0</td><td>1</td><td>#9AA89E</td></tr>
+        <tr><td>Pills</td><td>Outfit</td><td>12px (lg 14px)</td><td>500</td><td>0</td><td>1</td><td>#A7F5AA on forest-3</td></tr>
+        <tr><td>Form label</td><td>Outfit</td><td>13px</td><td>500</td><td>0.02em</td><td>1</td><td>#F5F7F5</td></tr>
+        <tr><td>Accordion title</td><td>Outfit</td><td>22px</td><td>500</td><td>0</td><td>1</td><td>#F5F7F5</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Google Fonts load:</p>
+    <pre>Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500
+Outfit:wght@400;500;600
+
+.display {
+  font-family: "Fraunces", Georgia, serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 0;
+  font-weight: 500;
+}</pre>
+    <p>Rules: one italic word per big headline. Body stays Outfit. Numbers and kickers stay small and tracked. Arrow ↗ is mint, not italic.</p>
+
+    <h2 id="gradient">Gradient — five places only</h2>
+    <p>Gradient is light, not wallpaper. Nowhere else.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3>1. Hero atmosphere</h3>
+        <div class="grad-hero"></div>
+        <pre>radial-gradient(ellipse 70% 55% at 78% 8%, rgba(167,245,170,0.16), transparent 58%),
+radial-gradient(ellipse 45% 40% at 8% 92%, rgba(124,255,107,0.07), transparent 52%)</pre>
+      </div>
+      <div class="card">
+        <h3>2. One italic word</h3>
+        <div class="grad-text">Creative</div>
+        <pre>linear-gradient(105deg, #a7f5aa 0%, #f5f7f5 72%)
+background-clip: text</pre>
+      </div>
+      <div class="card">
+        <h3>3. Primary button</h3>
+        <span class="grad-btn">Contact Me →</span>
+        <pre>linear-gradient(135deg, #a7f5aa 0%, #7cff6b 100%)
+box-shadow: 0 0 40px rgba(167,245,170,0.22)
+hover: 0 0 56px / translateY(-1px)</pre>
+      </div>
+      <div class="card">
+        <h3>4. Featured project</h3>
+        <p>Smart Campus only. <code>box-shadow: var(--glow)</code>. Other cards stay flat.</p>
+      </div>
+      <div class="card">
+        <h3>5. Footer fade</h3>
+        <p>Not a color gradient. Mask: <code>linear-gradient(#070b09 38%, transparent 92%)</code> on UFAQ.</p>
+      </div>
+      <div class="card">
+        <h3>Hero frame wash</h3>
+        <p>Portrait panel: <code>radial-gradient(ellipse 80% 60% at 50% 20%, rgba(167,245,170,0.14), transparent 55%)</code> over surface. Same mint family, still not a fifth color.</p>
+      </div>
+    </div>
+    <p><strong style="color:#e8a0a0">Never</strong> on nav, body copy, form fields, every card, icons, or a second headline.</p>
+
+    <h2 id="space">Space, radius, motion, layout</h2>
+    <table>
+      <tbody>
+        <tr><td><strong>Base</strong></td><td>8px. Tokens: 8 / 16 / 24 / 32 / 48 / 80</td></tr>
+        <tr><td><strong>Content width</strong></td><td>1120px. Horizontal pad 24px (20px under 900px)</td></tr>
+        <tr><td><strong>Nav height</strong></td><td>72px, sticky</td></tr>
+        <tr><td><strong>Section pad</strong></td><td>80px desktop · 40–64px mobile. Page top 56px</td></tr>
+        <tr><td><strong>Hero</strong></td><td>min-height calc(100vh - 72px). Grid 1.15fr / 0.85fr. Gap 48px. Pad 56 / 24 / 80</td></tr>
+        <tr><td><strong>Break</strong></td><td>900px: stack grids, hide desktop nav, show hamburger</td></tr>
+        <tr><td><strong>Radius</strong></td><td>sm 10 · md 16 · lg 24 · pill 999. Inputs 12px. Photos 12px. Mark/explore 50%</td></tr>
+        <tr><td><strong>Motion</strong></td><td>Button 0.2s transform + glow. UI under 400ms. <code>prefers-reduced-motion</code> kills transition and smooth scroll</td></tr>
+        <tr><td><strong>Grid overlay</strong></td><td>48px squares, mint 6% opacity, masked to the hero</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="components">Components</h2>
+    <div class="card" style="margin-bottom:16px">
+      <h3>Buttons</h3>
+      <div class="btn-row">
+        <span class="btn">Contact Me →</span>
+        <span class="btn ghost">View work</span>
+      </div>
+      <p>Primary = mint→lime gradient + on-mint text + pill. Ghost = transparent, 1px border, no glow. Block = full width (Submit). Nav CTA = 10×16, 13px.</p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Pills</h3>
+        <span class="pill">MySQL</span><span class="pill">PHP</span><span class="pill">SRS</span>
+        <p>surface-3 fill, mint type, 12px / 500. Large stack pills 10×16, 14px.</p>
+      </div>
+      <div class="card">
+        <h3>Accordion</h3>
+        <p>Index Fraunces mint 01–04 · title 22px · circle chevron +/− on surface-2. Open row: body muted, then pills. One open at a time.</p>
+      </div>
+      <div class="card">
+        <h3>Work card</h3>
+        <p>Index · title · one-line outcome · stack pills · year · View →. Featured = glow. Shots: 2×2 contain for DBMS, contain diagrams, contain game scenes. Height ~210px UI, not full-bleed.</p>
+      </div>
+      <div class="card">
+        <h3>Form</h3>
+        <p>Labels 13px. Fields bg, 12px radius, 12×14 pad, border mint 16%. Focus border mint 55%. Error #E8A0A0. Success mint. Submit is primary block.</p>
+      </div>
+      <div class="card">
+        <h3>Contact rows</h3>
+        <p>Surface card, 16px radius, 20px pad. 44px forest circle, mint glyph. Email / phone / location / GitHub.</p>
+      </div>
+      <div class="card">
+        <h3>Hero frame</h3>
+        <p>Rounded 24px. “Available for work” pill. Giant U. Role 14px muted. Explore disc 52px, forest, mint ↓, overlaps the bottom-right.</p>
+      </div>
+    </div>
+
+    <h2 id="voice">Voice</h2>
+    <div class="grid2">
+      <div class="card">
+        <h3>Locked lines</h3>
+        <p>“Hi, I’m Ufaq · Gujranwala, Pakistan”</p>
+        <p>“Creative / Developer ↗”</p>
+        <p>“I design and implement practical web applications with a focus on clarity, data integrity, and usable interfaces.”</p>
+        <p>“I turn messy records into systems people can trust.”</p>
+        <p>“Let’s work on a project.”</p>
+        <p>“Collaborate with Ufaq Khalid and start the next build.”</p>
+      </div>
+      <div class="card">
+        <h3>Tone</h3>
+        <p>Short. Concrete. Systems, records, schemas, specification. No emojis on the live site. No fake testimonials. No agency slogans.</p>
+        <p>Thank-you after form: “Thank you for reaching out! I really appreciate you taking the time to connect. I’ll review your message and get back to you as soon as I can.”</p>
+      </div>
+    </div>
+
+    <h2 id="ia">Pages and work</h2>
+    <table>
+      <thead><tr><th>Route</th><th>What it is</th></tr></thead>
+      <tbody>
+        <tr><td><code>/</code></td><td>Home — hero, selected work preview, about split</td></tr>
+        <tr><td><code>/about</code></td><td>Bio, services accordion, stack pills</td></tr>
+        <tr><td><code>/work</code></td><td>Smart Campus, Certification, Shadow Warrior</td></tr>
+        <tr><td><code>/contact</code></td><td>Form + email, phone, location, GitHub</td></tr>
+      </tbody>
+    </table>
+    <p>Services: Database systems · Specification · Web interfaces · Applied DSA.</p>
+    <p>Stack shown: HTML, CSS, JavaScript, PHP, MySQL, C++, Data Structures, SRS, Use Cases, Sequence Diagrams, XAMPP, Unity.</p>
+
+    <h2 id="tokens">CSS tokens (copy)</h2>
+    <pre>:root {
+  --bg: #070b09;
+  --bg-elevated: #0d1410;
+  --surface: #121a16;
+  --surface-2: #18241c;
+  --surface-3: #1b3822;
+  --mint: #a7f5aa;
+  --mint-soft: #b0f7b3;
+  --mint-deep: #8dff86;
+  --lime: #7cff6b;
+  --forest: #1f3a28;
+  --moss: #9aa89e;
+  --text: #f5f7f5;
+  --text-muted: #9aa89e;
+  --text-on-mint: #07110a;
+  --border: rgba(167, 245, 170, 0.16);
+  --glow: 0 0 80px rgba(167, 245, 170, 0.18);
+  --grid: rgba(167, 245, 170, 0.06);
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Outfit", "Segoe UI", sans-serif;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 80px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --nav-h: 72px;
+  --content: 1120px;
+}</pre>
+    <p>Source of truth: <code>src/styles/tokens.css</code></p>
+
+    <h2 id="rules">Do / don’t</h2>
+    <ul class="do">
+      <li>Keep dark forest + one mint family + Fraunces/Outfit.</li>
+      <li>Keep spark mark, pill CTAs, one italic word, numbered work, footer UFAQ fade.</li>
+      <li>Keep gradient in the five listed places only.</li>
+      <li>Use real projects, real contact, real screenshots.</li>
+    </ul>
+    <ul class="dont">
+      <li>Do not add a second accent color, neon, or emojis in the UI.</li>
+      <li>Do not put Fraunces on body copy.</li>
+      <li>Do not clone MORF, Onix, or Aezo identity (name, photo, fake quotes).</li>
+      <li>Do not fill every card with glow or gradient.</li>
+      <li>Do not ship placeholder grey bars where a screenshot belongs.</li>
+    </ul>
+  </div>
+</body>
+</html>
