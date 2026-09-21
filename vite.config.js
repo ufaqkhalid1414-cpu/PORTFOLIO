@@ -6,5 +6,8 @@ export default defineConfig({
   server: {
     port: 5173,
     host: "127.0.0.1",
+    watch: {
+      ignored: ["**/.tools/**", "**/pics-to-copy/video-frames/**", "**/scripts/**"],
+    },
   },
 });

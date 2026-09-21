@@ -2,12 +2,22 @@ import { useState } from "react";
 import { services } from "../data/content.js";
 import Icon from "./Icon.jsx";
 
-export default function ServicesList({ startOpen = true }) {
-  const [open, setOpen] = useState(startOpen ? services[0].id : "");
+/** Home/video order: Website Development, UI/UX, Brand + keep extras after */
+const HOME_ORDER = ["webdev", "uiux", "brand", "01", "02", "03", "04"];
+
+export default function ServicesList({ startOpen = true, limit }) {
+  const ordered = HOME_ORDER.map((id) => services.find((s) => s.id === id)).filter(
+    Boolean
+  );
+  const list = (ordered.length ? ordered : services).slice(
+    0,
+    limit ?? services.length
+  );
+  const [open, setOpen] = useState(startOpen ? list[0]?.id : "");
 
   return (
     <div className="accordion">
-      {services.map((item) => {
+      {list.map((item) => {
         const isOpen = open === item.id;
         return (
           <div key={item.id} className={`acc-item${isOpen ? " is-open" : ""}`}>

@@ -1,23 +1,77 @@
 :root {
-  --bg: #070b09;
-  --bg-elevated: #0d1410;
-  --surface: #121a16;
-  --surface-2: #18241c;
-  --surface-3: #1b3822;
-  --mint: #a7f5aa;
-  --mint-soft: #b0f7b3;
-  --mint-deep: #8dff86;
-  --lime: #7cff6b;
-  --forest: #1f3a28;
-  --moss: #9aa89e;
-  --text: #f5f7f5;
-  --text-muted: #9aa89e;
-  --text-on-mint: #07110a;
-  --border: rgba(167, 245, 170, 0.16);
-  --glow: 0 0 80px rgba(167, 245, 170, 0.18);
-  --grid: rgba(167, 245, 170, 0.06);
-  --font-display: "Fraunces", "Times New Roman", serif;
-  --font-sans: "Outfit", "Segoe UI", sans-serif;
+  /* —— ACTIVE: exact greens from your element list —— */
+  --creative: #4cdb62;
+  --bright: #6ada50;
+  --btn-left: #62d84c;
+  --btn-right: #9cff9f;
+  --bg: #071c0b;
+  --bg-elevated: #071c0b;
+  --glow-main: #19a83d;
+  --sea: #3d6b4a;
+  --sea-soft: #2a4f38;
+  --pill-bg: #2f4a38;
+  --pill-text: #b8d4c0;
+
+  --surface: #0e2414;
+  --surface-2: #132b1a;
+  --surface-3: #1a3522;
+  --stage-1: #45c554;
+  --stage-2: #69d774;
+  --stage-3: #93eb97;
+  --stage-4: #aef7b0;
+  --stage-5: #cafecd;
+  --stage-left: #aef7b0;
+  --stage-mid: #69d774;
+  --stage-right: #071c0b;
+  --mint: var(--creative);
+  --mint-soft: var(--btn-right);
+  --mint-deep: var(--bright);
+  --lime: var(--creative);
+  --lime-hot: var(--bright);
+  --accent: var(--creative);
+  --ribbon: var(--bright);
+  --logo: var(--bright);
+  --icon: var(--creative);
+  --forest: #0a2814;
+  --forest-2: #12321c;
+  --forest-glow: var(--glow-main);
+  --moss: #9ea19f;
+  --text: #ffffff;
+  --text-muted: #9ea19f;
+  --text-desc: #8e8e8d;
+  --text-contact: #919490;
+  --text-on-mint: #071c0b;
+  --placeholder: #6f826e;
+  --placeholder-footer: #52604f;
+  --copyright: #374932;
+  --form-panel: #0f2816;
+  --form-input: #163222;
+  --contact-pill: #122818;
+  --contact-pill-alt: #0e2014;
+  --skill-chip: #526a5f;
+  --chevron: #1a3522;
+  --divider: #1e3a28;
+  --footer-input: #122818;
+  --graphite: #3d3d3d;
+  --border: rgba(99, 210, 72, 0.22);
+  --glow: 0 0 80px rgba(25, 168, 61, 0.4);
+  --grid: rgba(25, 168, 61, 0.14);
+  --btn-grad: linear-gradient(
+    100deg,
+    var(--btn-left) 0%,
+    var(--bright) 45%,
+    var(--btn-right) 100%
+  );
+  --btn-submit-grad: linear-gradient(
+    100deg,
+    var(--btn-left) 0%,
+    var(--bright) 50%,
+    var(--btn-right) 100%
+  );
+  --mark-grad: linear-gradient(145deg, var(--btn-right) 0%, var(--bright) 45%, var(--creative) 100%);
+  --font-display: "Fraunces", "Times New Roman", Times, serif;
+  --font-heading: "Outfit", "Segoe UI", sans-serif;
+  --font-sans: "Manrope", "Segoe UI", sans-serif;
   --space-1: 8px;
   --space-2: 16px;
   --space-3: 24px;
@@ -29,5 +83,45 @@
   --radius-lg: 24px;
   --radius-pill: 999px;
   --nav-h: 80px;
-  --content: 1180px;
+  --content: 920px;
+  --shell: 1080px;
+  --frame-x: clamp(12px, 7.2vw, 140px);
+  --frame-top: clamp(20px, 6.7vw, 130px);
+  --frame-bottom: var(--frame-top);
+  --bg-black: #040504;
+  --bg-charcoal: #434343;
+  --bg-skills: #161616;
+
+  /* —— SAVED: previous neon theme (html[data-theme="neon"]) —— */
+  --neon-bg: #070b09;
+  --neon-mint: #c5ff4a;
+  --neon-lime: #c8ff3c;
+  --neon-btn-grad: linear-gradient(
+    165deg,
+    #f0ff8a 0%,
+    #d4ff4a 28%,
+    #b8ff32 58%,
+    #82e848 100%
+  );
+  --neon-mark-grad: linear-gradient(145deg, #f5ff9a 0%, #c8ff3c 48%, #8dff2e 100%);
+  --neon-stage-left: #baf88e;
+}
+
+html[data-theme="neon"] {
+  --bg: var(--neon-bg);
+  --bg-elevated: #0d1410;
+  --creative: var(--neon-lime);
+  --bright: var(--neon-mint);
+  --mint: var(--neon-mint);
+  --lime: var(--neon-lime);
+  --accent: var(--neon-lime);
+  --ribbon: var(--neon-lime);
+  --btn-grad: var(--neon-btn-grad);
+  --btn-submit-grad: linear-gradient(180deg, #b6ff40 0%, #c8ff3c 45%, #e8ff6a 100%);
+  --mark-grad: var(--neon-mark-grad);
+  --stage-left: var(--neon-stage-left);
+  --border: rgba(200, 255, 60, 0.2);
+  --glow: 0 0 80px rgba(200, 255, 60, 0.28);
+  --grid: rgba(200, 255, 60, 0.08);
+  --font-display: "Playfair Display", "Times New Roman", serif;
 }

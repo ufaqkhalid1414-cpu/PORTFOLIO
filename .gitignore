@@ -4,6 +4,8 @@ dist
 *.local
 references/
 selected-green/
+.tools/
+pics-to-copy/video-frames/
 ALL-PAGES-FULL.png
 preview-*.png
 sample-*.png

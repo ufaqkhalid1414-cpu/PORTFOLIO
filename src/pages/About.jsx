@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { about, site } from "../data/content.js";
+import ArrowUpRight from "../components/ArrowUpRight.jsx";
 import ServicesList from "../components/ServicesList.jsx";
 import SkillsList from "../components/SkillsList.jsx";
 
@@ -22,7 +23,7 @@ export default function About() {
         <div className="section-head">
           <p className="kicker">What I do</p>
           <h2 className="display section-title">
-            <span className="arrow">↗</span> My <em>Services</em>
+            <ArrowUpRight /> My <em>Services</em>
           </h2>
         </div>
         <ServicesList />
@@ -32,7 +33,7 @@ export default function About() {
         <div className="section-head">
           <p className="kicker">Stack</p>
           <h2 className="display section-title">
-            <span className="arrow">↗</span> My <em>Skills</em>
+            <ArrowUpRight /> My <em>Skills</em>
           </h2>
           <p className="lede" style={{ marginTop: 16 }}>
             Tools and methods that show up in the three projects on Work.

@@ -4,12 +4,14 @@ export const site = {
   displayName: "Ufaq Khalid",
   wordmark: "UFAQ",
   role: "Software / Web Developer",
-  eyebrow: "Hi, I’m Ufaq  ·  Gujranwala, Pakistan",
+  eyebrow: "Hi! I’m Ufaq  |  Gujranwala, Pakistan",
   headlineLead: "Creative",
-  headlineRest: "Designer & Developer",
+  headlineMid: "Designer & Developer",
   tagline:
     "I design and implement practical web applications with a focus on clarity, data integrity, and usable interfaces.",
-  workTagline: "I design and implement practical web applications.",
+  workTagline:
+    "Here is a selection of my favorite projects — crafted with intention, strategy, and care.",
+  footerCta: "Collaborate with Ufaq and begin your next build today.",
   email: "ufaqkhalid1414@gmail.com",
   phone: "0322-6037970",
   phoneHref: "tel:+923226037970",

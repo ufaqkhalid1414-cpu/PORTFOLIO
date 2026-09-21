@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { faqs, site } from "../data/content.js";
+import ArrowUpRight from "../components/ArrowUpRight.jsx";
 import Icon from "../components/Icon.jsx";
 
 const empty = { name: "", email: "", message: "" };
@@ -30,11 +31,10 @@ export default function Contact() {
   }
 
   return (
-    <main id="main" className="page">
-      <header className="page-hero">
-        <p className="kicker">Contact</p>
-        <h1 className="display page-title">
-          Let’s work on a <em>project</em>.
+    <main id="main" className="page page-contact">
+      <header className="page-hero page-hero-contact">
+        <h1 className="contact-heading">
+          <ArrowUpRight /> Contact <em>Me</em>
         </h1>
         <p className="lede">
           Open to real project work. Write me — I read every message.
@@ -82,8 +82,8 @@ export default function Contact() {
               soon as I can.
             </p>
           )}
-          <button className="btn btn-block" type="submit">
-            Submit
+          <button className="btn btn-block btn-submit" type="submit">
+            Submit <span aria-hidden="true">+</span>
           </button>
         </form>
 
@@ -133,7 +133,7 @@ export default function Contact() {
         <div className="section-head">
           <p className="kicker">FAQ</p>
           <h2 className="display section-title">
-            <span className="arrow">↗</span> Common <em>questions</em>
+            <ArrowUpRight /> Common <em>questions</em>
           </h2>
         </div>
         <div className="accordion">
