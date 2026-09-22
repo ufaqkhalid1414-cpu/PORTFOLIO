@@ -85,9 +85,9 @@
   --nav-h: 80px;
   --content: 920px;
   --shell: 1080px;
-  --frame-x: clamp(12px, 7.2vw, 140px);
-  --frame-top: clamp(20px, 6.7vw, 130px);
-  --frame-bottom: var(--frame-top);
+  --frame-x: 0px;
+  --frame-top: 0px;
+  --frame-bottom: 0px;
   --bg-black: #040504;
   --bg-charcoal: #434343;
   --bg-skills: #161616;

@@ -1,0 +1,34 @@
+---
+description: Never change header or banner unless the user explicitly asks
+alwaysApply: true
+---
+
+# Header and banner lock
+
+When the user asks for any other site change, do **not** change the header or the banner unless they explicitly name that part.
+
+## Header (nav only)
+
+From the top of the page through the nav bar:
+
+- Spark logo, Home, About us, Services, My Work, Testimonial, Contact Me
+- Same links, labels, order, pill bar, and Contact Me button
+
+Do not restyle, recolor, reorder, or move the header.
+
+## Banner (hero)
+
+From just under the nav through the photo block:
+
+- “Hi! I’m Ufaq…”
+- Creative Designer & Developer
+- Tagline
+- Girl photo, Portfolio ribbon, glow behind the photo, round ↓ / Let’s explore button
+
+Do not restyle, recolor, rewrite, crop, or move the banner. Do not swap the photo or ribbon.
+
+## Allowed
+
+Other sections may change (mission, work, services, skills, testimonials, contact, Thanks, spacing below the banner, inner pages).
+
+If a requested change would alter header or banner, skip that part and say so. Only edit them when the user clearly asks to change the header or the banner.
