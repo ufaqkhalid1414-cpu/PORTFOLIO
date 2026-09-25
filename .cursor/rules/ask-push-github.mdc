@@ -1,0 +1,23 @@
+---
+description: After finishing work, ask before pushing to GitHub
+alwaysApply: true
+---
+
+# Ask before GitHub push
+
+When a real piece of work is done (feature finished, site updated, or the user would treat the task as complete):
+
+1. Ask clearly: **Push to GitHub?**
+2. Do not commit or push until the user says yes (yes, y, push it, go ahead).
+3. If they say yes:
+   - Commit only if there are real changes (follow the repo’s git safety rules).
+   - Push the **existing** remote and branch. Do not create a new repo if `origin` already exists.
+   - Never force-push. Never skip hooks. Never change git config.
+   - After a successful push, say that Vercel will update by itself if this GitHub repo is already connected.
+4. If they say no, stop. Do not push.
+
+Do **not** ask after tiny replies, questions-only turns, or when nothing was changed.
+
+Example:
+
+> This part is done. **Push to GitHub?** If you say yes, I will push to the same repo and Vercel can deploy it.

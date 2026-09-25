@@ -1,11 +1,15 @@
 ---
-description: Never change header or banner unless the user explicitly asks
-alwaysApply: true
+description: Header and banner lock (paused)
+alwaysApply: false
 ---
 
-# Header and banner lock
+# Header and banner lock — PAUSED
 
-When the user asks for any other site change, do **not** change the header or the banner unless they explicitly name that part.
+This rule is turned off for now at the user's request.
+
+When it is turned back on (`alwaysApply: true`):
+
+Do **not** change the header or the banner unless the user explicitly names that part.
 
 ## Header (nav only)
 
@@ -29,6 +33,6 @@ Do not restyle, recolor, rewrite, crop, or move the banner. Do not swap the phot
 
 ## Allowed
 
-Other sections may change (mission, work, services, skills, testimonials, contact, Thanks, spacing below the banner, inner pages).
+Other sections may change (mission, work, services, skills, testimonials, contact, spacing below the banner, inner pages).
 
 If a requested change would alter header or banner, skip that part and say so. Only edit them when the user clearly asks to change the header or the banner.

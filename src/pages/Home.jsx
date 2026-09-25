@@ -1,12 +1,12 @@
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { projects, site, testimonials } from "../data/content.js";
 import ArrowUpRight from "../components/ArrowUpRight.jsx";
+import ClosingFooter from "../components/ClosingFooter.jsx";
 import Icon from "../components/Icon.jsx";
 import ProjectCard from "../components/ProjectCard.jsx";
 import ServicesList from "../components/ServicesList.jsx";
 import SkillsList from "../components/SkillsList.jsx";
-import Spark from "../components/Spark.jsx";
 
 const mission = (
   <>
@@ -19,26 +19,6 @@ export default function Home() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
-  const [footerEmail, setFooterEmail] = useState("");
-
-  useEffect(() => {
-    const el = document.querySelector(".thanks-wrap");
-    if (!el) return undefined;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        document.documentElement.classList.toggle(
-          "thanks-active",
-          entry.isIntersecting && entry.intersectionRatio >= 0.12
-        );
-      },
-      { threshold: [0.08, 0.12, 0.35, 0.6] }
-    );
-    io.observe(el);
-    return () => {
-      io.disconnect();
-      document.documentElement.classList.remove("thanks-active");
-    };
-  }, []);
 
   useLayoutEffect(() => {
     const mid = document.querySelector(".home-mid");
@@ -82,14 +62,6 @@ export default function Home() {
     );
     window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
     setSent(true);
-  }
-
-  function onFooterSubmit(e) {
-    e.preventDefault();
-    if (!footerEmail.trim()) return;
-    const subject = encodeURIComponent("Portfolio");
-    const body = encodeURIComponent(`From: ${footerEmail.trim()}`);
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
   }
 
   return (
@@ -360,84 +332,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 9–10 — Closing CTA + Thanks */}
-      <section className="section home-footer" aria-label="Footer">
-        <p className="home-footer-mark" aria-hidden="true">
-          {site.wordmark}
-          <span className="home-footer-star home-footer-star-1">✦</span>
-          <span className="home-footer-star home-footer-star-2">✦</span>
-          <span className="home-footer-star home-footer-star-3">✦</span>
-        </p>
-        <div className="home-footer-row">
-          <div className="home-footer-left">
-            <span className="home-footer-orb" aria-hidden="true">
-              <Spark size={18} />
-            </span>
-            <p className="home-footer-cta">
-              COLLABORATE WITH UFAQ AND BEGIN YOUR NEXT BUILD TODAY.
-            </p>
-          </div>
-          <div className="home-footer-right">
-            <nav className="home-footer-links" aria-label="Footer">
-              <a href="#contact-home">PRIVACY POLICY</a>
-              <a href="#contact-home">TERM &amp; CONDITION</a>
-              <NavLink to="/about">ABOUT US</NavLink>
-              <NavLink to="/contact#faq">FAQ</NavLink>
-            </nav>
-            <div className="home-footer-social">
-              <a
-                href={site.github}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="GitHub"
-              >
-                <Icon name="git" size={18} />
-              </a>
-            </div>
-            <form className="home-footer-mail" onSubmit={onFooterSubmit}>
-              <input
-                type="email"
-                name="footer-email"
-                value={footerEmail}
-                onChange={(e) => setFooterEmail(e.target.value)}
-                placeholder="Email"
-                aria-label="Email"
-                required
-              />
-              <button className="btn btn-submit home-footer-mail-btn" type="submit">
-                Submit <span aria-hidden="true">+</span>
-              </button>
-            </form>
-          </div>
-        </div>
-        <p className="home-footer-copy">©2026 | ALL RIGHTS RESERVED</p>
-      </section>
+      {/* 9 — Closing CTA */}
+      <ClosingFooter />
       </div>
-
-      <section className="thanks-wrap" id="thanks" aria-label="Thanks for watching">
-        <div className="thanks-bg" aria-hidden="true">
-          <span className="thanks-bg-base" />
-          <span className="thanks-bg-light" />
-          <span className="thanks-bg-mid" />
-          <span className="thanks-bg-shade" />
-        </div>
-        <h2 className="thanks-title">
-          Thanks For
-          <br />
-          Watching!
-        </h2>
-        <div className="thanks-stage">
-          <img
-            className="thanks-fg"
-            src="/thanks-laptop.png?v=2"
-            alt="Open laptop on a dark rock showing the portfolio"
-          />
-          <NavLink to="/contact" className="thanks-cta">
-            <ArrowUpRight />
-            Message us directly to collaborate
-          </NavLink>
-        </div>
-      </section>
     </main>
   );
 }

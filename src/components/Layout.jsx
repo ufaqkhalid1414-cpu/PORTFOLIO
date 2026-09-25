@@ -1,6 +1,7 @@
 import { useEffect, useLayoutEffect, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { site } from "../data/content.js";
+import ClosingFooter from "./ClosingFooter.jsx";
 import Spark from "./Spark.jsx";
 
 const links = [
@@ -153,39 +154,7 @@ export default function Layout() {
 
         <Outlet />
 
-        <footer className={`site-footer${location.pathname === "/" ? " is-home" : ""}`}>
-          {location.pathname !== "/" && (
-            <>
-              <div className="footer-copy">
-                <p className="kicker">Next</p>
-                <p className="footer-line">
-                  Collaborate with {site.displayName} and begin your next build today.
-                </p>
-                <NavLink to="/contact" className="btn">
-                  Contact Me <span aria-hidden="true">→</span>
-                </NavLink>
-                <NavLink to="/contact" className="footer-plus" aria-label="Contact Me">
-                  +
-                </NavLink>
-              </div>
-              <p className="footer-wordmark" aria-hidden="true">
-                {site.wordmark}
-              </p>
-            </>
-          )}
-          <div className="footer-meta">
-            <span>© {new Date().getFullYear()} {site.displayName}</span>
-            <div className="footer-links">
-              <Link to={{ pathname: "/", hash: "testimonials" }}>Testimonials</Link>
-              <NavLink to="/contact#faq">FAQ</NavLink>
-              <a href={site.github} target="_blank" rel="noreferrer">
-                GitHub
-              </a>
-              <a href={site.phoneHref}>{site.phone}</a>
-              <a href={`mailto:${site.email}`}>{site.email}</a>
-            </div>
-          </div>
-        </footer>
+        {location.pathname !== "/" && <ClosingFooter />}
       </div>
     </div>
   );
